@@ -1,0 +1,145 @@
+/* this is responsible for the content animations */
+@keyframes main-atm{
+    0%{
+        opacity: 0;
+        }
+    100%{
+        transform: rotate(xx);
+        opacity: 1;
+        }
+}
+
+.atm{
+    animation: main-atm 1s forwards 0s ease;
+}
+/* this is responsible for the notifications*/
+@keyframes message{
+    0%{
+        opacity: 0;
+        }
+    25%{
+        opacity: 1;
+        }
+    75%{
+        opacity: 1;
+        }
+    100%{
+        transform: rotate(xx);
+        opacity: 0;
+        }
+}
+
+.msg-atm{
+    animation: message 7s forwards 0s ease;
+}
+/* this is for the greeting on the dash board page */
+@keyframes wel-dash{
+    0%{
+        opacity: 0;
+        }
+    25%{
+        opacity: 1;
+        }
+    75%{
+        opacity: 1;
+        }
+    100%{
+        transform: rotate(xx);
+        opacity: 0;
+        }
+}
+
+.wel-atm{
+    animation: wel-dash 5s forwards 0s ease;
+}
+/* this is resposible for the animations of the btn on the view all page */
+@keyframes btn-animate{
+    0%{
+        opacity: 0;
+        }
+    100%{
+        transform: rotate(xx);
+        opacity: 1;
+        }
+}
+
+.btn-fade{
+    animation: btn-animate 1s infinite 0s ease;
+}
+/* this is resposible for the auth nav bar */
+@keyframes auth-animation{
+    0%{
+        transform: translateY(-100%);
+        }
+    100%{
+        }
+}
+
+.auth-atm{
+    animation: auth-animation 0.5s forwards 0s ease;
+}
+/* search animation */
+@keyframes result{
+    0%{
+        transform: scale(0);
+        }
+    100%{
+        transform: rotate(xx) scale(1);
+        }
+}
+
+.search-at{
+    animation: result 0.3s forwards 0s ease-out;
+}
+/* cms animation */
+@keyframes cms-content{
+    0%{
+        transform: translateX(100%);
+        }
+    100%{
+        }
+}
+
+.cms-atm2{
+    animation: cms-content 1s forwards 0s ease;
+}
+
+@keyframes search-new{
+    0%{
+        transform: translateY(100%);
+        }
+    100%{
+        }
+}
+
+.search-atm{
+    animation: search-new 1s forwards 0s ease;
+}
+
+
+
+@keyframes Cms-slot{
+    0%{
+        transform: scale(0);
+        }
+    100%{
+        transform: rotate(xx) scale(1);
+        }
+}
+
+.Dy-cms{
+    animation: Cms-slot 0.5s forwards 0s ease;
+}
+
+ @keyframes cms-atm{
+            0%{
+                transform: translateY(100%);
+                }
+            100%{
+                transform: rotate(xx) translateY(0);
+                }
+        }
+
+        .cms-atm{
+            animation: cms-atm 1s forwards 0s ease;
+        }
