@@ -22,7 +22,7 @@ class JobsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){ 
+    public function index(){
            $posts = Post::orderby('created_at','asc')->get();
         return view('Jobs.index')->with('posts',$posts);
     }
@@ -48,14 +48,14 @@ class JobsController extends Controller
         $this->validate($request,[
             'title' =>'required|max:100',
             'body'  => 'required',
-             
+
         ]);
           $post = new Post;
           $post ->title = $request->input('title');
           $post ->body = $request->input('body');
           $post->save();
           return redirect('Viewall/All_job')->with('success','Job Created');
-     
+
     }
 
     /**
@@ -104,7 +104,7 @@ class JobsController extends Controller
           $post ->body = $request->input('body');
           $post->save();
           return redirect('Viewall/All_job')->with('success','Job Updated');
-     
+
     }
 
     /**
@@ -123,13 +123,13 @@ class JobsController extends Controller
         else{
          $post->delete();
         if(count($counter)<1){
-         return redirect('/')->with('error','Their arent any jobs to show');   
+         return redirect('/FennTech')->with('error','Their arent any jobs to show');
         }
         else{
         return redirect('Viewall/All_job')->with('error','Job removed');
        }
-       
+
        }
     }
-   
+
 }

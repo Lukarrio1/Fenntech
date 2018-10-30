@@ -15,11 +15,11 @@ class TestController extends Controller
     public function __construct()
     {
         $this->middleware('auth',['except'=>['index']]);
-    }   
+    }
 
     public function index()
     {
-    
+
     }
 
     /**
@@ -27,7 +27,7 @@ class TestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+
     public function create()
     {
         //returns the create view
@@ -44,7 +44,7 @@ class TestController extends Controller
     {
         $this->validate($request,[
             'testimonial' =>'required',
-             
+
         ]);
           $test = new Test;
           $test ->testimonial = $request->input('testimonial');
@@ -91,7 +91,7 @@ class TestController extends Controller
     {
         $this->validate($request,[
             'testimonial' =>'required',
-             
+
         ]);
           $test = Test::find($id);
           $test ->testimonial = $request->input('testimonial');
@@ -107,7 +107,7 @@ class TestController extends Controller
      */
     public function destroy($id)
     {
-       
+
         $test =Test::find($id);
         $counter = Test::all();
         //this checks if the selected entry to be deleted is actually present
@@ -117,14 +117,14 @@ class TestController extends Controller
         else{
          $test->delete();
         if(count($counter)<1){
-         return redirect('/')->with('error','There arent any testimonials to show');   
+         return redirect('/FennTech')->with('error','There arent any testimonials to show');
         }
         else{
-        return redirect('/')->with('error','Testimonial Removed');
+        return redirect('/FennTech')->with('error','Testimonial Removed');
        }
        }
     }
 }
 
-    
+
 

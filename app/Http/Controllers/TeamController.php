@@ -42,7 +42,7 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-           
+
         $this->validate($request,[
             'Name' =>'required|max:20',
             'Position'  => 'required',
@@ -66,7 +66,7 @@ class TeamController extends Controller
           $teams->save();
           return redirect('Viewall/All_team')->with('success','Team member added');
     }
-    
+
 
     /**
      * Display the specified resource.
@@ -93,7 +93,7 @@ class TeamController extends Controller
     public function edit($id)
     {
         $team = Team::find($id);
-        return view('Team.edit')->with('team',$team); 
+        return view('Team.edit')->with('team',$team);
     }
 
     /**
@@ -138,10 +138,10 @@ class TeamController extends Controller
                 return redirect('Viewall/All_team')->with('success','Team member Removed');
                 }
         if(count($counter)<1){
-         return redirect('/Team')->with('error','Team empty');   
+         return redirect('/Team')->with('error','Team empty');
         }
         else{
-        return redirect('/')->with('error','Team memeber deleted');
+        return redirect('/FennTech')->with('error','Team memeber deleted');
        }
     }
     }

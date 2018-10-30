@@ -14,13 +14,15 @@
 
 Auth::routes();
 
-Route::resource('/', 'HomeController');
+Route::get('/','MainController@main');
+
+Route::resource('/FennTech', 'HomeController');
 
 Route::get('/All_testimonials', 'HomeController@view_all');
 
 Route::get('/about', 'PagesController@about');
 
-Route::resource('Jobs' ,'JobsController');       
+Route::resource('Jobs' ,'JobsController');
 
 Route::get('/DashBoard', 'DashBoardController@index');
 
@@ -44,7 +46,7 @@ Route::delete('/photos/{id}','PhotosController@destroy');
 
 Route::get('/photos/{id}','PhotosController@show');
 
-Route::resource('/contact','ContactController'); 
+Route::resource('/contact','ContactController');
 
 Route::post('/contact/Search','ContactController@Search');
 

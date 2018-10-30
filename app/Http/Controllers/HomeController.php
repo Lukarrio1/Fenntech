@@ -15,7 +15,7 @@ class HomeController extends Controller
      public function __construct()
     {
         $this->middleware('auth',['except'=>['index']]);
-    } 
+    }
 
 
     public function index()
@@ -23,7 +23,7 @@ class HomeController extends Controller
         $homes= Test::all();
         $slides = Slide::all();
         return view('home.index')->with('homes',$homes)->with('slides',$slides);
-        
+
     }
 
     /**
@@ -91,7 +91,7 @@ class HomeController extends Controller
     {
         //
     }
-   
+
     public function view_all(){
         $tests = Test::all();
         return view('Home.All_testimonials')->with('tests',$tests);

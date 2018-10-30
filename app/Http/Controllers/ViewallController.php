@@ -13,7 +13,7 @@ class ViewallController extends Controller
     {
         $this->middleware('auth',['except'=>['']]);
     }
-    // This function returns all of the team members 
+    // This function returns all of the team members
     public function All_team(){
         $teams = Team::orderby('created_at','asec')->get();
         if($teams==null){
@@ -22,7 +22,7 @@ class ViewallController extends Controller
         return view('Viewall.All_team')->with('teams',$teams);
         }
     }
-    // This function returns all of the jobs  
+    // This function returns all of the jobs
     public function All_jobs(){
         $jobs = Post::orderby('created_at','asc')->get();
         if($jobs==null){
@@ -31,9 +31,9 @@ class ViewallController extends Controller
             else{
              return view('Viewall.All_job')->with('jobs',$jobs);
             }
-       
+
         }
-    // This function returns all of the slides  
+    // This function returns all of the slides
     public function All_slides(){
         $slides = Slide::orderby('created_at','asc')->get();
         if($slides==null){
@@ -42,6 +42,6 @@ class ViewallController extends Controller
             else{
              return view('Viewall.All_slide')->with('slides',$slides);
             }
-       
+
         }
 }
