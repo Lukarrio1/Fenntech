@@ -2,7 +2,7 @@
 @section('title')
 Inbox ({{ count($messages) }})
 @endsection
-@section('search')
+@section('nav_dy')
 @if(count($messages)>1) 
 {!! Form::open(['action' => 'ContactController@Search', 'method'=>'Post', 'enctype'=> 'multipart/form-data', 'class'=>'form-inline ']) !!}
 <div class="form-group">
@@ -14,7 +14,8 @@ Inbox ({{ count($messages) }})
 @endif  
 @endsection
 @section('counter')
-<div class="btn btn-outline-dark btn-lg Dy-cms">@if(count($messages)<1)<span class="alert text-danger"> ({{ count($messages) }})
+<div class="btn btn-outline-dark btn-lg Dy-cms">
+@if(count($messages)<1)<span class="alert text-danger"> ({{ count($messages) }})
 @if(count($messages)==1)message @else messages @endif </span> @else <span class="alert text-success"> ({{ count($messages) }})
 @if(count($messages)==1)message @else messages @endif </span>@endif</div>
 </div>
@@ -34,15 +35,11 @@ Inbox ({{ count($messages) }})
 @foreach($messages as $message)
 <div class="col-lg-12 pb-3 col-xs-12">
 <div class="card pt-2  bg-dark">
-<div class="card-header text-white text-center bg-dark h3 ">{!! $message->email !!}</div>
+<a href="/contact/{{ $message->id }}" style="text-decoration:none">
+<div class="card-header text-white text-center bg-dark h3 ">{!! $message->email !!}<br>{!! $message->subject !!}<br>{{ date('M j, Y h:ia', strtotime($message->created_at ))}}</div></a>
 <div class="card-body  auth_user_color text-center text-white">
-<p class="h3">subject :{!! $message->subject !!}</p>
-<p class="h4 ">
-{{ $message->created_at }}
-</p>
-<div class="card-footer row">
+{{-- <div class="card-footer row">
 <div class="col-lg-6"> 
-<a href="/contact/{{ $message->id }}" class="btn btn-outline-dark text-primary btn-lg">View</a>
 </div>
 <div class="col-lg-6 text-center ">
 {!! Form::open(['action'=>['ContactController@destroy',$message->id], 'method'=>'post', 'class'=>'']) !!}
@@ -50,7 +47,7 @@ Inbox ({{ count($messages) }})
 {{ Form::hidden('_method','DELETE') }}
 {!! Form::close() !!}
 </div>
-</div>
+</div> --}}
 </div>
 </div>
 </div>

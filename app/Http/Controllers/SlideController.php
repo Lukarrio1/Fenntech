@@ -37,7 +37,7 @@ class SlideController extends Controller
     public function store(Request $request)
     {   
         $this->validate($request, [
-            'slide' => 'image|max:1999',
+            'slide' => 'image|max:1999|required',
          ]);
      //gets the image name with extension.
      $filenameWithExt= $request->file('slide')->getClientOriginalName();

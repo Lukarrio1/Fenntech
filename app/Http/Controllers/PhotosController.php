@@ -11,11 +11,9 @@ class PhotosController extends Controller
         if($album_id==null){
             return redirect('/portfolio')->with('error','this album does not exist');
         }else{
-    return view('photos.create')->with('album_id',$album_id);
+       return view('photos.create')->with('album_id',$album_id);
         }
     }
-
-
 
     public function store(Request $request)
     {
@@ -38,7 +36,7 @@ class PhotosController extends Controller
          $photo = new Photo;
          $photo->album_id =$request->input('album_id');
          $photo-> title =$request->input('title');
-         $photo-> description =$request->input('description');
+         $photo->description =$request->input('description');
          $photo->size=$request->file('photo')->getClientSize();
          $photo->photo= $filenametostore;
          $photo->save();

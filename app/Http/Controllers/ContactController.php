@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -18,9 +17,8 @@ class ContactController extends Controller
         $this->middleware('auth',['except'=>['create','store']]);
     }
 
-
     public function index()
-    {  
+    {
     $messages = Contact::orderby('created_at','desc')->get();
         return view('contact.index')->with('messages',$messages);
     }
@@ -49,22 +47,22 @@ class ContactController extends Controller
             'body' => 'required|max:700',
         ]);
        $mail = new Contact;
-       $mail ->email = $request->input('email'); 
+       $mail ->email = $request->input('email');
        $mail->subject =$request->input('subject');
-       $mail ->body = $request->input('body'); 
-    //    $data = array(
-    //    'email' => $request->email,
-    //    'subject' => $request->subject,
-    //    'body' =>$request->body,
-    //       );
-    //    Mail::send('email.contact', $data, function($message) use ($data){
-    //        $message->from($data['email']);
-    //        $message->subject($data['subject']);
-    //        $message->to('tomennis1997@gmail.com');
-    //    });
+       $mail ->body = $request->input('body');
+       $data = array(
+       'email' => $request->email,
+       'subject' => $request->subject,
+       'body' =>$request->body,
+          );
+       Mail::send('email.contact', $data, function($message) use ($data){
+           $message->from($data['email']);
+           $message->subject($data['subject']);
+           $message->to('tomennis1997@gmail.com');
+       });
         $mail ->save();
         return redirect('/contact/create')->with('success',$request->input('email').' your message is sent');
-       
+
     }
 
     /**
@@ -113,7 +111,7 @@ class ContactController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    { 
+    {
         $message= Contact::find($id);
         $counter = Contact::all();
         //this checks if the selected entry to be deleted is actually present
@@ -123,7 +121,7 @@ class ContactController extends Controller
         else{
          $message->delete();
         if(count($counter)<1){
-         return redirect('/contact')->with('error','Your inbox is empty');   
+         return redirect('/contact')->with('error','Your inbox is empty');
         }
         else{
         return redirect('/contact')->with('error','Message deleted');

@@ -25,7 +25,7 @@
             <li><a href="{{ url('/') }}"><span class="text-primary">Fenn</span ><span class="text-success">Tech</span></a></li>   
          <div class="cms-nav-nav"> 
           <li> <a href="{{ url('contact/') }}" >Inbox
-    </a></li>
+           </a></li>
             <li><a href="{{ url('Viewall/All_job') }}">Jobs
             </a></li>
             <li><a href="{{ url('Viewall/All_team') }}">Team Members
