@@ -73,11 +73,12 @@ class ContactController extends Controller
      */
     public function show($id)
     {
+        $inbox = Contact::all();
         $mail = Contact::find($id);
         if($mail==null){
-            return redirect('/contact')->with('error','Sorry this mail is not in the database any more');
+            return redirect('/contact')->with('error','Sorry this mail is not in the database any more')->with('inbox',$inbox);
         }else{
-            return view('contact/show')->with('mail',$mail);
+            return view('contact/show')->with('mail',$mail)->with('inbox',$inbox);
         }
     }
 

@@ -1,11 +1,16 @@
 @extends('layouts.cms')
+@section('inbox-coun')
+@php
+echo count($inbox);
+@endphp
+@endsection
 @section('title')
 Team Members
 @endsection
 @section('nav_dy')
 <a href="{{ url('Team/create') }}" class="">
 &#x2795;
-Team Member 
+Team Member
 </a>
 @endsection
 @section('counter')

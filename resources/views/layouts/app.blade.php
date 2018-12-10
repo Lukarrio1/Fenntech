@@ -14,14 +14,15 @@
 <title>FennTech | @yield('title')</title>
 </head>
 <body>
-    <div id="app">
-       @include('inc.navbar') 
+    <div id="app" class="bg-white">
+       @include('inc.navbar')
        <div class="msg-atm">
         @include('inc.message')
-          </div> 
-          <div class="container-fluid">
+          </div>
+          <div class="">
             @yield('content')
         </div>
+        @include('inc.footer')
         <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
         <script>
             CKEDITOR.replace( 'article-ckeditor' );

@@ -1,5 +1,4 @@
-
-<nav class="navbar navbar-expand-md">
+<nav class="navbar navbar-expand-md sticky-top bg-white">
     <div class="row">
     <div class="col-9 pull-left">
         <a class="navbar-brand" href="{{ url('/') }}">
@@ -7,7 +6,7 @@
         </a>
     </div>
     <div class="col-3 pt-2 ">
-        <a  class="navbar-toggler bg-success" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <a  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
         </a>
     </div>

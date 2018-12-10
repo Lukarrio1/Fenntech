@@ -3,7 +3,7 @@
 Portfolio
 @endsection
 @section('content')
-<div class="card text-white col-12 bg-success ">
+<div class="card text-white col-12 bg-success rounded pt-1">
         <div class=" card-body">
             <p class="h1">Our Portfolio</p>
         </div>
@@ -11,9 +11,8 @@ Portfolio
 <div class="row pt-2">
     @if(count($albums)>0)
     @foreach($albums as $album)
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center">
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center">
     <img class="img-size" src="/storage/album_covers/{{ $album->cover_image }}" alt="{{ $album->name }}" >
-    <br>
     <p class="h4">{{ $album->name }}</p>
     <a href="/portfolio/{{ $album->id }}" class="btn btn-lg btn-primary">Open Portfolio</a>
     </div>
@@ -24,7 +23,7 @@ Portfolio
             Portfolio Empty &#x1F605;
            </div>
         </div>
-     
+
     @endif
 </div>
 @endsection

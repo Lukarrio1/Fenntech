@@ -1,9 +1,14 @@
 @extends('layouts.cms')
+@section('inbox-coun')
+@php
+ echo count($messages);
+@endphp
+@endsection
 @section('title')
 Inbox ({{ count($messages) }})
 @endsection
 @section('nav_dy')
-@if(count($messages)>1) 
+@if(count($messages)>1)
 {!! Form::open(['action' => 'ContactController@Search', 'method'=>'Post', 'enctype'=> 'multipart/form-data', 'class'=>'form-inline ']) !!}
 <div class="form-group">
 {{ Form::label('','') }}
@@ -11,7 +16,7 @@ Inbox ({{ count($messages) }})
 </div>
 {{ Form::submit('&#x1F50D;',['class'=>'invisible']) }}
 {!! Form::close() !!}
-@endif  
+@endif
 @endsection
 @section('counter')
 <div class="btn btn-outline-dark btn-lg Dy-cms">
@@ -39,7 +44,7 @@ Inbox ({{ count($messages) }})
 <div class="card-header text-white text-center bg-dark h3 ">{!! $message->email !!}<br>{!! $message->subject !!}<br>{{ date('M j, Y h:ia', strtotime($message->created_at ))}}</div></a>
 <div class="card-body  auth_user_color text-center text-white">
 {{-- <div class="card-footer row">
-<div class="col-lg-6"> 
+<div class="col-lg-6">
 </div>
 <div class="col-lg-6 text-center ">
 {!! Form::open(['action'=>['ContactController@destroy',$message->id], 'method'=>'post', 'class'=>'']) !!}
@@ -51,7 +56,7 @@ Inbox ({{ count($messages) }})
 </div>
 </div>
 </div>
-@endforeach 
+@endforeach
 </div>
 <script>
 </script>

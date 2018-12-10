@@ -1,12 +1,12 @@
-<div id="carouselControls" class="carousel slide " data-ride="carousel">
-    <div class="carousel-inner">
+<div id="carouselControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner ">
       <div class="carousel-item active">
-      <img src="{{ url('storage/slide2.jpg') }}" alt="" class="img-size">
-      </div>    
+      <img src="{{ url('storage/slide2.jpg') }}" alt="" class="img-size w-100 d-block">
+      </div>
        @foreach($slides as $item)
       <div class="carousel-item">
-          <img src="/storage/Slides/{{ $item->slides }}" alt=""  class="img-size">
-      </div> 
+          <img src="/storage/Slides/{{ $item->slides }}" alt=""  class="img-size w-100 d-block">
+      </div>
        @endforeach
     </div>
     <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">

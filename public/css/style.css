@@ -1,5 +1,5 @@
 .logo {
-    height: 53px;
+    height: 15%;
     width: 100%;
 }
 
@@ -17,13 +17,13 @@ carousel img {
 }
 
 .img-size {
-    height: 500px;
+    height: 50%;
     width: 100%;
 }
 
 .inner-img {
-    height: 500px;
-    width: 80%;
+    height: 40%;
+    width: 40%;
 }
 
 .link {

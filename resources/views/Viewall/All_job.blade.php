@@ -1,10 +1,15 @@
 @extends('layouts.cms')
+@section('inbox-coun')
+@php
+ echo count($inbox);
+@endphp
+@endsection
 @section('title')
 Jobs
 @endsection
 @section('nav_dy')
 <a href="{{ url('Jobs/create') }}" class=""> &#x2795;
- Job 
+ Job
 </a>
 @endsection
 @section('counter')

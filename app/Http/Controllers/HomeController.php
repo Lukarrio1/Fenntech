@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Test;
 use App\Slide;
+use App\Contact;
 class HomeController extends Controller
 {
     /**
@@ -93,7 +94,8 @@ class HomeController extends Controller
     }
 
     public function view_all(){
+        $inbox = Contact::all();
         $tests = Test::all();
-        return view('Home.All_testimonials')->with('tests',$tests);
+        return view('Home.All_testimonials')->with('tests',$tests)->with('inbox',$inbox);
         }
 }

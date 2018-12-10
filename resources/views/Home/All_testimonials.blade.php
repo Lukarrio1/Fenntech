@@ -1,4 +1,9 @@
 @extends('layouts.cms')
+@section('inbox-coun')
+@php
+echo count($inbox);
+@endphp
+@endsection
 @section('title')
 Testimonials({{count($tests) }})
 @endsection
@@ -9,7 +14,7 @@ Testimonials({{count($tests) }})
 @section('co/unter')
 <div class="btn btn-outline-dark btn-lg Dy-cms">@if(count($tests)<1)<span class="alert text-danger"> ({{ count($tests) }}) Testimonials @endif
 @if(count($tests)==1)<span class="alert text-success"> ({{ count($tests) }}) Testimonial @endif @if(count($tests)>1)<span class="alert text-success"> ({{ count($tests) }}) Testimonials @endif
-</div> 
+</div>
 @endsection
 @section('content')
 <div class="row justify-content-center">
@@ -26,5 +31,5 @@ Testimonials({{count($tests) }})
     @endforeach
     </div>
 </div>
- 
+
 @endsection

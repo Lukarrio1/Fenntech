@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-{!! $album->name !!}   
+{!! $album->name !!}
 @endsection
 @section('content')
 <div class="row pt-2">
@@ -29,7 +29,7 @@
     <a href="/photos/{{ $photo->id }}">
     <img class="thumbnail" src="/storage/photos/{{ $photo->album_id }}/{{ $photo->photo }}" alt="{{ $photo->title }}" height="300px" width="100%">
     <br>
-    <p class="h4 menu-item">{{ $photo->title }}</p>
+    <p class="h4 menu-item text-dark ">{{ $photo->title }}</p>
     </a>
     </div>
     @endforeach
